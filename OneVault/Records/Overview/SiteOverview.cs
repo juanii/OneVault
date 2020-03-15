@@ -26,6 +26,9 @@ namespace OneVault.Records
         {
             base.PopulateEntry(pwEntry, pwDatabase, userPrefs);
 
+            if (!string.IsNullOrEmpty(this.url))
+                pwEntry.Strings.Set(PwDefs.UrlField, new ProtectedString(pwDatabase.MemoryProtection.ProtectUrl, this.url));
+
             if (this.URLs != null)
             {
                 int i = 1;
