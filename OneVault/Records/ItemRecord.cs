@@ -57,8 +57,6 @@ namespace OneVault.Records
             if (this.fave > 0 && !pwEntry.Tags.Contains(Properties.Strings.Tag_Favorite))
                 pwEntry.Tags.Add(Properties.Strings.Tag_Favorite);
 
-            string attachmentsPath = Path.Combine(userPrefs.ImportDirPath, "default");
-
             foreach (KeyValuePair<string, AttachmentMetadata> attachment in attachmentsMetadata)
             {
                 if (File.Exists(attachment.Key))
